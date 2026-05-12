@@ -1,0 +1,21 @@
+{
+  "name": "Pure Nature",
+  "short_name": "PureNature",
+  "description": "100% Organic Skincare and Wellness Products",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F5F3F0",
+  "theme_color": "#6B7C5B",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

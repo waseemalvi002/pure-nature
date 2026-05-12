@@ -1,0 +1,136 @@
+/* Custom Styles for Pure Nature */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #F5F3F0;
+}
+::-webkit-scrollbar-thumb {
+    background: #8A9D79;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #556448;
+}
+
+/* Initial Load Animation */
+.fade-in-up {
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reveal on Scroll Elements */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal-up.active, .reveal-left.active, .reveal-right.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* WhatsApp Pulse Animation */
+.animate-pulse-slow {
+    animation: pulseSlow 2.5s infinite;
+}
+
+@keyframes pulseSlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(107, 124, 91, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(107, 124, 91, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(107, 124, 91, 0);
+    }
+}
+
+/* Navbar Link Underline */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #6B7C5B;
+    transition: width 0.3s ease-in-out;
+}
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Modal Open state classes */
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-backdrop-show {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.modal-show {
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 3D Animations */
+@keyframes rotate3d {
+  0% { transform: perspective(500px) rotateY(0deg) rotateX(0deg) scale(1); }
+  50% { transform: perspective(500px) rotateY(15deg) rotateX(5deg) scale(1.15); }
+  100% { transform: perspective(500px) rotateY(0deg) rotateX(0deg) scale(1); }
+}
+.animate-3d-logo {
+  animation: rotate3d 4s infinite ease-in-out;
+  transform-style: preserve-3d;
+}
+
+@keyframes text3d {
+  0% { transform: perspective(500px) translateZ(0) scale(1); text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15); }
+  50% { transform: perspective(500px) translateZ(10px) scale(1.1); text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 0 #999, 0 7px 0 #888, 0 8px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 8px 10px rgba(0,0,0,.25), 0 15px 10px rgba(0,0,0,.2), 0 25px 20px rgba(0,0,0,.15); }
+  100% { transform: perspective(500px) translateZ(0) scale(1); text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15); }
+}
+.animate-3d-text {
+  animation: text3d 3s infinite ease-in-out;
+}
